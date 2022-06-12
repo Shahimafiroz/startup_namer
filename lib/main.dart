@@ -1,4 +1,3 @@
-import 'package:crypton/splash.dart';
 import 'package:crypton/splash1.dart';
 import 'package:flutter/material.dart';
 import 'myhomepage.dart';
