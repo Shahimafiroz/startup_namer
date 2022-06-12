@@ -20,55 +20,64 @@ class _SplashState extends State<Splash> {
             height: screenHeight,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/splash3.png"),
+                image: AssetImage("assets/splash5.png"),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
+                // colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
               ),
             ),
           ),
         ),
-
         Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: screenHeight * 0.40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(20.0),
-              ),
-              gradient: RadialGradient(
-                colors: [
-                  Colors.white.withOpacity(0.20),
-                  Colors.white.withOpacity(0.10),
-                ],
-                radius: 50.0,
-              ),
-            ),
+          bottom: 40,
+          left: 20,
+          // right: 0,
+          child: GlassMorphismContainer(
+            screenHeight: screenHeight,
+            screenWidth: screenWidth,
+            height: screenHeight * 0.30,
+            width: screenWidth * 0.90,
+            borderRadius: 50.0,
           ),
         )
-
-        // Scaffold(
-        //   backgroundColor: Colors.transparent,
-        //   body: Column(
-        //     children: [
-        //       Flexible(
-        //         child: Center(
-        //           child: Text(
-        //             "Crypton",
-        //             style: TextStyle(
-        //               color: Colors.white,
-        //               fontSize: 50,
-        //               fontWeight: FontWeight.bold,
-        //             ),
-        //           ),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ],
+    );
+  }
+}
+
+class GlassMorphismContainer extends StatelessWidget {
+  final double height;
+  final double width;
+  final double borderRadius;
+
+  const GlassMorphismContainer({
+    Key? key,
+    required this.screenHeight,
+    required this.screenWidth,
+    required this.height,
+    required this.width,
+    this.borderRadius = 20.0,
+  }) : super(key: key);
+
+  final double screenHeight;
+  final double screenWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: screenHeight * 0.30,
+      width: screenWidth * 0.90,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20.0),
+        ),
+        gradient: RadialGradient(
+          colors: [
+            Color.fromARGB(255, 243, 244, 245).withOpacity(0.40),
+            Colors.white.withOpacity(0.90),
+          ],
+          radius: 50.0,
+        ),
+      ),
     );
   }
 }
