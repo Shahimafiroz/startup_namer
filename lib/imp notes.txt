@@ -1,0 +1,15 @@
+   decoration: BoxDecoration(
+       borderRadius: BorderRadius.all(
+         Radius.circular(this.borderRadius),
+       ),
+
+        //blurr effect
+        gradient: RadialGradient(
+          colors: [
+            Color.fromARGB(255, 248, 248, 247).withOpacity(0.40),
+            Color.fromARGB(255, 247, 245, 245).withOpacity(0.90),
+            // radius: borderRadius //20.0,
+          ],
+          radius: borderRadius,
+        ),
+      ),

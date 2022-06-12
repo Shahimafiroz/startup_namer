@@ -1,31 +1,29 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'mycolors.dart';
 
-class Entrance extends StatefulWidget {
-  Entrance({Key? key}) : super(key: key);
+class Background extends StatelessWidget {
+  const Background({
+    Key? key,
+    required this.screenWidth,
+  }) : super(key: key);
 
-  @override
-  State<Entrance> createState() => _EntranceState();
-}
+  final double screenWidth;
 
-class _EntranceState extends State<Entrance> {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         color: Mycolors.background,
         child: Stack(
           children: [
             Positioned(
-              top: -250,
+              top: 50,
               child: Container(
                 //width: size.width,
                 //height: size.width + 250,
                 width: screenWidth,
-                height: screenHeight,
+                height: screenWidth,
                 decoration: BoxDecoration(
                   gradient: RadialGradient(
                       radius: 0.50,
@@ -33,15 +31,19 @@ class _EntranceState extends State<Entrance> {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
+            Positioned(
+              top: 450,
               child: Container(
-                padding: EdgeInsets.all(30),
-                width: screenWidth - 50,
-                height: screenWidth - 50,
-                // child: Image.asset("assets/icon.png"),
+                width: screenWidth,
+                height: screenWidth,
+                decoration: BoxDecoration(
+                  gradient: RadialGradient(radius: 0.45, colors: [
+                    Mycolors.pinkball,
+                    Mycolors.background,
+                  ]),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

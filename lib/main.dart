@@ -1,5 +1,5 @@
-import 'package:crypton/entrance.dart';
 import 'package:crypton/splash.dart';
+import 'package:crypton/splash1.dart';
 import 'package:flutter/material.dart';
 import 'myhomepage.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: Splash(),
+      home: Splash1(),
     );
   }
 }

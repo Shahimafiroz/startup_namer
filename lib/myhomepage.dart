@@ -1,4 +1,5 @@
-import 'package:crypton/mycolors.dart';
+import 'package:crypton/widgets/background.dart';
+import 'package:crypton/widgets/mycolors.dart';
 import 'package:flutter/material.dart';
 
 class Myhomepage extends StatefulWidget {
@@ -13,41 +14,13 @@ class _MyhomepageState extends State<Myhomepage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    // Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        color: Mycolors.background,
-        child: Stack(
-          children: [
-            Positioned(
-              top: -250,
-              child: Container(
-                //width: size.width,
-                //height: size.width + 250,
-                width: screenWidth,
-                height: screenHeight,
-                decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                      radius: 0.50,
-                      colors: [Mycolors.blueball, Mycolors.background]),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 250,
-              child: Container(
-                width: screenWidth,
-                height: screenHeight,
-                decoration: BoxDecoration(
-                  gradient: RadialGradient(radius: 0.45, colors: [
-                    Mycolors.pinkball,
-                    Mycolors.background,
-                  ]),
-                ),
-              ),
-            ),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Positioned(
+            child: Background(screenWidth: screenWidth),
+          ),
+        ],
       ),
     );
   }

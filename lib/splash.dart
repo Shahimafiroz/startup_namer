@@ -1,3 +1,4 @@
+import 'package:crypton/widgets/glassMorphismContainer.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -22,7 +23,6 @@ class _SplashState extends State<Splash> {
               image: DecorationImage(
                 image: AssetImage("assets/splash5.png"),
                 fit: BoxFit.cover,
-                // colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
               ),
             ),
           ),
@@ -36,48 +36,50 @@ class _SplashState extends State<Splash> {
             screenWidth: screenWidth,
             height: screenHeight * 0.30,
             width: screenWidth * 0.90,
-            borderRadius: 50.0,
+            borderRadius: 25.0,
           ),
         )
+
+        //Positioned(child: GlassMorphismContainer)
       ],
     );
   }
 }
 
-class GlassMorphismContainer extends StatelessWidget {
-  final double height;
-  final double width;
-  final double borderRadius;
+// class GlassMorphismContainer extends StatelessWidget {
+//   final double height;
+//   final double width;
+//   final double borderRadius;
 
-  const GlassMorphismContainer({
-    Key? key,
-    required this.screenHeight,
-    required this.screenWidth,
-    required this.height,
-    required this.width,
-    this.borderRadius = 20.0,
-  }) : super(key: key);
+//   const GlassMorphismContainer({
+//     Key? key,
+//     required this.screenHeight,
+//     required this.screenWidth,
+//     required this.height,
+//     required this.width,
+//     this.borderRadius = 20.0,
+//   }) : super(key: key);
 
-  final double screenHeight;
-  final double screenWidth;
+//   final double screenHeight;
+//   final double screenWidth;
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: screenHeight * 0.30,
-      width: screenWidth * 0.90,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(20.0),
-        ),
-        gradient: RadialGradient(
-          colors: [
-            Color.fromARGB(255, 243, 244, 245).withOpacity(0.40),
-            Colors.white.withOpacity(0.90),
-          ],
-          radius: 50.0,
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: screenHeight * 0.30,
+//       width: screenWidth * 0.90,
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.all(
+//           Radius.circular(this.borderRadius),
+//         ),
+//         gradient: RadialGradient(
+//           colors: [
+//             Color.fromARGB(255, 243, 244, 245).withOpacity(0.40),
+//             Colors.white.withOpacity(0.90),
+//           ],
+//           radius: 50.0,
+//         ),
+//       ),
+//     );
+//   }
+// }
